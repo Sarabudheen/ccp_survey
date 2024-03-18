@@ -9,5 +9,5 @@ RUN mvn -f /home/app/pom.xml clean package
 # Package stage
 #
 FROM openjdk:17-alpine
-COPY --from=build /home/app/target/CCP_Survey-0.0.1-SNAPSHOT.war/usr/local/lib/CCP_Survey-0.0.1-SNAPSHOT.war
+COPY --from=build /home/app/target/CCP_Survey-0.0.1-SNAPSHOT.war /usr/local/lib/CCP_Survey-0.0.1-SNAPSHOT.war
 ENTRYPOINT ["java","-jar","/usr/local/lib/CCP_Survey-0.0.1-SNAPSHOT.war"]
